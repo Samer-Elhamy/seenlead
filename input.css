@@ -1,0 +1,530 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Seenlead Apple Micro-Interactions, Spring Physics & State Dynamics
+ * Engineered for Executive Dignity & Silky Tactile Precision
+ * 
+ * Easing Curves:
+ * - Fluid Deceleration: cubic-bezier(0.16, 1, 0.3, 1)
+ * - Tactile Mechanical Press: cubic-bezier(0.2, 0, 0, 1)
+ * - Micro-Snap Spring: cubic-bezier(0.34, 1.56, 0.64, 1)
+ * - Sine Ambient Breathing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+ */
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  /* ==========================================================================
+     1. APPLE SPRING EASING TOKENS
+     ========================================================================== */
+  --ease-apple-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-apple-press: cubic-bezier(0.2, 0, 0, 1);
+  --ease-apple-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-apple-breathe: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-apple-retract: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ==========================================================================
+     2. DURATION TOKENS
+     ========================================================================== */
+  --duration-instant: 110ms;
+  --duration-swift: 220ms;
+  --duration-smooth: 380ms;
+  --duration-deliberate: 550ms;
+  --duration-ambient: 4000ms;
+
+  /* ==========================================================================
+     3. KINETIC SCALES & OFFSETS
+     ========================================================================== */
+  --scale-press-btn: 0.975;
+  --scale-press-sm: 0.965;
+  --scale-hover-btn: 1.015;
+  --scale-hover-card: 1.008;
+  --elevate-btn: -2px;
+  --elevate-card: -5px;
+
+  /* ==========================================================================
+     4. SPECULAR & SHADOW TOKENS
+     ========================================================================== */
+  --specular-sheen-top: inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
+  --specular-rim-glass: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  --apple-btn-emerald-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.32), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --apple-btn-emerald-hover-shadow: 0 12px 32px -4px rgba(16, 185, 129, 0.46), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  --apple-btn-emerald-active-shadow: 0 2px 6px -1px rgba(16, 185, 129, 0.25), inset 0 2px 4px 0 rgba(0, 0, 0, 0.35);
+
+  --apple-card-shadow-resting: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  --apple-card-shadow-hover: 0 24px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px -5px rgba(16, 185, 129, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* ==========================================================================
+   BUTTON ARCHITECTURE (Apple Hardware Tactility)
+   ========================================================================== */
+
+/**
+ * 1. Primary Emerald Action CTA (.seenlead-btn-primary)
+ * Apple-grade tactile button with hardware bevel, fluid lift, and hydraulic press
+ */
+.seenlead-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #10b981;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  box-shadow: var(--specular-sheen-top), var(--apple-btn-emerald-shadow);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  will-change: transform, box-shadow;
+  transition: 
+    transform var(--duration-smooth) var(--ease-apple-fluid),
+    box-shadow var(--duration-smooth) var(--ease-apple-fluid),
+    background-color var(--duration-swift) ease,
+    border-color var(--duration-swift) ease;
+}
+
+/* Dynamic Specular Sheen Layer */
+.seenlead-btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: transform 0.65s var(--ease-apple-fluid);
+}
+
+/* Hover State: Smooth Hydraulic Elevation */
+.seenlead-btn-primary:hover {
+  background-color: #059669;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(var(--elevate-btn)) scale(var(--scale-hover-btn));
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.4),
+    var(--apple-btn-emerald-hover-shadow);
+}
+
+.seenlead-btn-primary:hover::after {
+  transform: translateX(350%) skewX(-20deg);
+}
+
+/* Active State: Apple Tactile Press Compression */
+.seenlead-btn-primary:active {
+  transform: translateY(0.5px) scale(var(--scale-press-btn));
+  box-shadow: var(--apple-btn-emerald-active-shadow);
+  transition-duration: var(--duration-instant);
+  transition-timing-function: var(--ease-apple-press);
+}
+
+/* Focus-Visible: Apple Signature Dual-Ring Accessible Outline */
+.seenlead-btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px #08090a,
+    0 0 0 4px #10b981,
+    0 0 22px 2px rgba(16, 185, 129, 0.55);
+}
+
+/* Disabled State */
+.seenlead-btn-primary:disabled,
+.seenlead-btn-primary[aria-disabled="true"] {
+  opacity: 0.42;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+  filter: grayscale(40%);
+}
+
+/**
+ * 2. Secondary Frosted Glass Pill (.seenlead-btn-secondary)
+ * Calming dark glass surface with subtle rim refraction
+ */
+.seenlead-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: var(--specular-rim-glass), 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #f7f8f8;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(0) scale(1);
+  will-change: transform, background, border-color, box-shadow;
+  transition: 
+    transform var(--duration-smooth) var(--ease-apple-fluid),
+    background-color var(--duration-swift) ease,
+    border-color var(--duration-swift) ease,
+    box-shadow var(--duration-smooth) var(--ease-apple-fluid);
+}
+
+.seenlead-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1.5px) scale(1.01);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16),
+    0 8px 24px -4px rgba(0, 0, 0, 0.45);
+}
+
+.seenlead-btn-secondary:active {
+  transform: translateY(0.5px) scale(var(--scale-press-btn));
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition-duration: var(--duration-instant);
+  transition-timing-function: var(--ease-apple-press);
+}
+
+.seenlead-btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px #08090a,
+    0 0 0 4px rgba(255, 255, 255, 0.45),
+    0 0 16px rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   CARD ARCHITECTURE (Calm 3D Spatial Presence)
+   ========================================================================== */
+
+/**
+ * 3. Apple Bento & Pillar Card (.seenlead-card)
+ * Physical surface depth, hairline top specular highlight, smooth elevation
+ */
+.seenlead-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.032) 0%, rgba(255, 255, 255, 0.008) 100%), #0c0e12;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 20px;
+  box-shadow: var(--apple-card-shadow-resting);
+  transform: perspective(1200px) translateZ(0) translateY(0) scale(1);
+  will-change: transform, box-shadow, border-color;
+  transition: 
+    transform var(--duration-deliberate) var(--ease-apple-fluid),
+    box-shadow var(--duration-deliberate) var(--ease-apple-fluid),
+    border-color var(--duration-smooth) ease,
+    background-color var(--duration-smooth) ease;
+}
+
+/* Top Specular Rim Light */
+.seenlead-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity var(--duration-smooth) var(--ease-apple-fluid);
+  z-index: 2;
+}
+
+.seenlead-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: perspective(1200px) translateZ(10px) translateY(var(--elevate-card)) scale(var(--scale-hover-card));
+  box-shadow: var(--apple-card-shadow-hover);
+}
+
+.seenlead-card:hover::before {
+  opacity: 0.9;
+}
+
+/* Clickable card variant */
+.seenlead-card-interactive {
+  cursor: pointer;
+}
+
+.seenlead-card-interactive:active {
+  transform: perspective(1200px) translateZ(2px) translateY(-1.5px) scale(0.995);
+  transition-duration: var(--duration-instant);
+  transition-timing-function: var(--ease-apple-press);
+}
+
+.seenlead-card:focus-within {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 
+    0 0 0 1px rgba(16, 185, 129, 0.3),
+    0 24px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   CTA GATEWAY & GLOWING BORDER GRADIENTS
+   ========================================================================== */
+
+/**
+ * 4. Apple Glowing Border Gateway (.seenlead-cta-gateway)
+ * High-conversion focal module with silky rotating chromatic aura
+ */
+.seenlead-cta-gateway {
+  position: relative;
+  border-radius: 24px;
+  background: #0b0d11;
+  padding: 1px; /* border thickness */
+  overflow: hidden;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.8);
+  transition: transform var(--duration-deliberate) var(--ease-apple-fluid);
+}
+
+/* Dynamic Rotating Border Glow (Chrome 99+, Safari 16.4+, Firefox 121+) */
+.seenlead-cta-gateway::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0deg,
+    rgba(16, 185, 129, 0.6) 60deg,
+    rgba(94, 106, 210, 0.5) 120deg,
+    transparent 180deg,
+    rgba(16, 185, 129, 0.6) 240deg,
+    rgba(59, 130, 246, 0.5) 300deg,
+    transparent 360deg
+  );
+  animation: apple-border-rotate 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Inner Card Plate */
+.seenlead-cta-gateway-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  background: linear-gradient(180deg, rgba(16, 20, 26, 0.96) 0%, rgba(10, 12, 16, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Fallback for legacy browsers without @property */
+@keyframes apple-border-rotate {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+.seenlead-cta-gateway:hover {
+  transform: translateY(-3px) scale(1.004);
+}
+
+/**
+ * 5. Apple Radar Live Status Beacon (.apple-live-beacon)
+ * Multi-ring shockwave radar pulse for verified live metrics & status
+ */
+.apple-live-beacon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+}
+
+.apple-live-beacon-core {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  position: relative;
+  z-index: 2;
+}
+
+.apple-live-beacon-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(16, 185, 129, 0.7);
+  transform: translate(-50%, -50%);
+  animation: apple-radar-shockwave 2.8s var(--ease-apple-fluid) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.apple-live-beacon-ring:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+@keyframes apple-radar-shockwave {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.8);
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE TABLE ROW DYNAMICS (RTL Fluid Micro-Slide)
+   ========================================================================== */
+.seenlead-table-row {
+  transform: translateX(0);
+  transition: 
+    background-color var(--duration-swift) ease,
+    transform var(--duration-smooth) var(--ease-apple-fluid);
+}
+
+.seenlead-table-row:hover {
+  background-color: rgba(255, 255, 255, 0.038);
+  transform: translateX(-4px); /* Calm slide to the left in RTL */
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: REDUCED MOTION PREFERENCE
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+
+
+:root {
+  color-scheme: dark;
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #08090a;
+  color: #f7f8f8;
+  font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  width: 100%;
+  touch-action: manipulation;
+}
+.linear-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background 0.25s ease;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .linear-card:hover {
+    background: rgba(255, 255, 255, 0.038);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+}
+.specular-top-light {
+  background: radial-gradient(circle at 50% 0%, rgba(94, 106, 210, 0.14) 0%, transparent 65%);
+}
+.radial-grid-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+.whatsapp-glow-badge {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  animation: pulse-emerald 2.5s infinite;
+}
+@keyframes pulse-emerald {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+.executive-dock-glass {
+  background: rgba(13, 15, 17, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.touch-tactile {
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.1s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.touch-tactile:active {
+  transform: scale(0.975);
+  opacity: 0.92;
+}
+.ios-scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+  touch-action: pan-x pan-y;
+}
+.ios-scroll-touch::-webkit-scrollbar {
+  height: 4px;
+}
+.ios-scroll-touch::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.18);
+  border-radius: 9999px;
+}
+.safe-top-header {
+  padding-top: max(0px, env(safe-area-inset-top));
+}
+.dock-safe-bottom {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
