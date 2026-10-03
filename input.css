@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./tokens/apple-space-black-titanium.css";
+
 /**
  * Seenlead Apple Micro-Interactions, Spring Physics & State Dynamics
  * Engineered for Executive Dignity & Silky Tactile Precision

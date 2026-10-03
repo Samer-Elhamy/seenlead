@@ -14,6 +14,23 @@ module.exports = {
         panel: '#0f1011',
         surface: '#16181a',
         surfaceElevated: '#1f2124',
+        void: '#000000',
+        spaceBlack: '#050507',
+        titanium: {
+          base: '#0a0a0c',
+          1: '#101114',
+          2: '#161619',
+          3: '#1c1d22',
+          4: '#23252b',
+          active: '#2b2e35'
+        },
+        titaniumText: {
+          primary: '#ffffff',
+          silver: '#f5f5f7',
+          secondary: '#a1a1a6',
+          tertiary: '#6e6e73',
+          quaternary: '#48484a'
+        },
         accent: {
           DEFAULT: '#5e6ad2',
           hover: '#7170ff'
@@ -21,6 +38,7 @@ module.exports = {
         brandEmerald: {
           DEFAULT: '#10b981',
           hover: '#059669',
+          vibrant: '#00e599',
           glow: 'rgba(16, 185, 129, 0.20)'
         }
       },
