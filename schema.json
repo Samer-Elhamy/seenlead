@@ -31,8 +31,14 @@
         },
         {
           "@id": "https://seenlead.com/#service"
+        },
+        {
+          "@id": "https://seenlead.com/#professionalservice"
         }
       ],
+      "author": {
+        "@id": "https://samerelhamy.com/#person"
+      },
       "breadcrumb": {
         "@id": "https://seenlead.com/#breadcrumb"
       },
@@ -56,30 +62,57 @@
       ],
       "url": "https://seenlead.com",
       "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Generative Engine Optimization (GEO) & AI Search Engine Dominance",
       "operatingSystem": "All Cloud & Web Platforms",
       "description": "Seenlead هي المنصة السحابية المتقدمة لهندسة الصدارة الرقمية ومضاعفة المبيعات عبر السيطرة على ترشيحات الذكاء الاصطناعي (ChatGPT, Perplexity, Google AI Overviews) والبحث الصوتي وخرائط جوجل لتحويل كل عملية بحث محلي إلى زبائن وعقود شراء حقيقية.",
       "creator": {
         "@id": "https://samerelhamy.com/#person"
       },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Generative Artificial Intelligence",
+          "alternateName": "الذكاء الاصطناعي التوليدي",
+          "sameAs": "https://www.wikidata.org/wiki/Q117246174"
+        },
+        {
+          "@type": "Thing",
+          "name": "Retrieval-Augmented Generation",
+          "alternateName": "التوليد المعزز بالاسترجاع",
+          "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+        },
+        {
+          "@type": "Thing",
+          "name": "Large Language Model",
+          "alternateName": "نماذج اللغة الكبيرة",
+          "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "bestRating": "5.0",
         "worstRating": "1.0",
-        "ratingCount": "38",
-        "reviewCount": "38"
+        "ratingCount": 38,
+        "reviewCount": 38
       },
       "review": [
         {
           "@type": "Review",
+          "@id": "https://seenlead.com/#review-angelo",
+          "itemReviewed": {
+            "@id": "https://seenlead.com/#software"
+          },
           "author": {
             "@type": "Organization",
             "name": "إدارة Shisha Lounge Angelo - أمستردام"
           },
+          "datePublished": "2025-02-10",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5.0",
-            "bestRating": "5.0"
+            "bestRating": "5.0",
+            "worstRating": "1.0"
           },
           "reviewBody": "بفضل منظومة المهندس سامر إلهامي، تصدرت منصتنا المركز الأول في إجابات وترشيحات الذكاء الاصطناعي في أمستردام بـ 15 لغة مختلفة. النتيجة كانت زيادة مباشرة في الحجوزات والمبيعات بنسبة +65% دون الحاجة لإنفاق دولار واحد في الإعلانات اليومية. التحول من موقع عادي إلى مرجع موثوق في الذكاء الاصطناعي كان أفضل قرار استثماري اتخذناه."
         }
@@ -108,12 +141,58 @@
         "@type": "EducationalOrganization",
         "@id": "https://www.wikidata.org/wiki/Q4116239",
         "name": "Arab Academy for Science, Technology and Maritime Transport (AASTMT)"
-      }
+      },
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "alternateName": "الذكاء الاصطناعي التوليدي",
+          "sameAs": "https://www.wikidata.org/wiki/Q117246174"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Retrieval-Augmented Generation",
+          "alternateName": "التوليد المعزز بالاسترجاع",
+          "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Large Language Model",
+          "alternateName": "نماذج اللغة الكبيرة",
+          "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Artificial Intelligence",
+          "alternateName": "الذكاء الاصطناعي",
+          "sameAs": "https://www.wikidata.org/wiki/Q11660"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Search Engine Optimization",
+          "alternateName": "تحسين محركات البحث",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Knowledge Graph",
+          "alternateName": "الرسم البياني المعرفي",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/Samer-Elhamy",
+        "https://samerelhamy.com"
+      ]
     },
     {
       "@type": "Organization",
       "@id": "https://seenlead.com/#organization",
       "name": "Seenlead",
+      "alternateName": [
+        "منصة سين ليد",
+        "Seenlead Platform"
+      ],
       "url": "https://seenlead.com",
       "founder": {
         "@id": "https://samerelhamy.com/#person"
@@ -129,7 +208,148 @@
         ]
       },
       "logo": "https://seenlead.com/favicon.svg",
-      "image": "https://seenlead.com/og-image.png"
+      "image": "https://seenlead.com/og-image.png",
+      "hasOfferCatalog": {
+        "@id": "https://seenlead.com/#offercatalog"
+      }
+    },
+    {
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://seenlead.com/#professionalservice",
+      "name": "Seenlead Executive AI & Search Dominance Advisory",
+      "alternateName": [
+        "سين ليد للاستشارات الهندسية وصدارة الذكاء الاصطناعي",
+        "Seenlead Strategic Advisory"
+      ],
+      "url": "https://seenlead.com",
+      "parentOrganization": {
+        "@id": "https://seenlead.com/#organization"
+      },
+      "founder": {
+        "@id": "https://samerelhamy.com/#person"
+      },
+      "telephone": "+201289541850",
+      "email": "samer@samerelhamy.com",
+      "priceRange": "$$$$",
+      "currenciesAccepted": "USD, EUR, SAR, AED, EGP",
+      "paymentAccepted": "Wire Transfer, Credit Card, Corporate Invoicing",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cairo",
+        "addressRegion": "Cairo Governorate",
+        "addressCountry": {
+          "@type": "Country",
+          "name": "Egypt",
+          "sameAs": "https://www.wikidata.org/wiki/Q79"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.0444,
+        "longitude": 31.2357
+      },
+      "areaServed": [
+        "Global",
+        "Egypt",
+        "Netherlands",
+        "Saudi Arabia",
+        "United Arab Emirates"
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://seenlead.com/#offercatalog"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://seenlead.com/#service",
+      "name": "منظومة هندسة الصدارة الرقمية ومضاعفة المبيعات (GEO & Local AI Search Dominance)",
+      "alternateName": "Seenlead AI Citation & Search Dominance Engine",
+      "serviceType": "Generative Engine Optimization (GEO), Technical SEO, AI Citation Architecture",
+      "provider": {
+        "@id": "https://seenlead.com/#professionalservice"
+      },
+      "areaServed": [
+        "Global",
+        "Egypt",
+        "Netherlands",
+        "Saudi Arabia",
+        "United Arab Emirates"
+      ],
+      "description": "نساعد الشركات وأصحاب الأعمال على امتلاك أصل رقمي دائم يضمن ترشيح نشاطك التجاري بالاسم كأول وأفضل إجابة في ChatGPT وPerplexity وGoogle وخرائط جوجل لمضاعفة المبيعات دون استنزاف في الإعلانات.",
+      "hasOfferCatalog": {
+        "@id": "https://seenlead.com/#offercatalog"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Generative Artificial Intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q117246174"
+        },
+        {
+          "@type": "Thing",
+          "name": "Retrieval-Augmented Generation",
+          "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+        },
+        {
+          "@type": "Thing",
+          "name": "Large Language Model",
+          "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "name": "VIP Diagnostic Audit & Consultation"
+      }
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://seenlead.com/#offercatalog",
+      "name": "Seenlead AI Dominance & GEO Offerings Catalog",
+      "alternateName": "دليل خدمات وحلول سين ليد للسيطرة على محركات الذكاء الاصطناعي",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "@id": "https://seenlead.com/#offer-geo-retainer",
+          "name": "Generative Engine Optimization (GEO) Retainer & AI Answer Dominance",
+          "alternateName": "عقد الصدارة الحصرية في محركات التوليد والذكاء الاصطناعي",
+          "description": "تأمين الصدارة المطلقة والترشيح بالاسم كخيار أول في إجابات ChatGPT وPerplexity وGoogle AI Overviews بنسبة اقتباس تفوق 84%.",
+          "itemOffered": {
+            "@id": "https://seenlead.com/#service"
+          },
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://seenlead.com/#offer-knowledge-graph",
+          "name": "Enterprise Semantic Entity Graph & Knowledge Architecture",
+          "alternateName": "بناء الشفرة الدلالية المترابطة والربط بـ Wikidata",
+          "description": "بناء شبكة الكيانات المعرفية المعتمدة وربط نشاطك التجاري بقواعد البيانات العالمية لمنع الهلوسة وفرض مرجعيتك الرقمية.",
+          "itemOffered": {
+            "@id": "https://seenlead.com/#service"
+          },
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://seenlead.com/#offer-deterministic-speed",
+          "name": "Sub-100ms Deterministic Edge Performance & Voice Search Architecture",
+          "alternateName": "هندسة الاستجابة الفورية دون 100 مللي ثانية والتوافق الصوتي الكامل",
+          "description": "تحسين البنية التحتية للخوادم والواجهات لتحقيق سرعة تحميل فائقة وتوافق حصري مع استفسارات المساعدات الصوتية (Siri, Google Assistant).",
+          "itemOffered": {
+            "@id": "https://seenlead.com/#service"
+          },
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
     },
     {
       "@type": "HowTo",
@@ -267,7 +487,7 @@
         {
           "@type": "Question",
           "@id": "https://seenlead.com/#faq-q-7",
-          "name": "لماذا تُعد سرعة استجابة الموقع في أقل من 100 مللي ثانية عاملاً حاسماً في المبيعات وتصدر الـ AI؟",
+          "name": "لماذا تُعد سرعة استجابة الموقع في أقل من 100 مللي ثانية عاملاً حاسماً في المبيعات وتتصدر الـ AI؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "@id": "https://seenlead.com/#faq-a-7",
@@ -283,57 +503,6 @@
             "@id": "https://seenlead.com/#faq-a-8",
             "text": "تتولى Seenlead التنفيذ الهندسي بالكامل في 3 خطوات دون أعباء برمجية على فريقك، ويمكنك البدء بحجز جلسة استشارية تنفيذية مباشرة عبر الواتساب: 01289541850. تتكفل إدارة Seenlead الهندسية بكافة التفاصيل البرمجية والبنية التحتية المعقدة دون الحاجة لتدخل فريقك التقني، عبر 3 خطوات تنفيذية: حصر استفسارات المشترين الدقيقة، بناء الشفرة الدلالية المعتمدة، وتفعيل سرعة التحميل الفورية لفحص موقعك الحالي وتحديد خطة التصدر المباشر."
           }
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://seenlead.com/#service",
-      "name": "منظومة هندسة الصدارة الرقمية ومضاعفة المبيعات (GEO & Local AI Search Dominance)",
-      "alternateName": "Seenlead AI Citation & Search Dominance Engine",
-      "serviceType": "Generative Engine Optimization (GEO), Technical SEO, AI Citation Architecture",
-      "provider": {
-        "@id": "https://seenlead.com/#organization"
-      },
-      "areaServed": [
-        "Global",
-        "Egypt",
-        "Netherlands",
-        "Saudi Arabia",
-        "United Arab Emirates"
-      ],
-      "description": "نساعد الشركات وأصحاب الأعمال على امتلاك أصل رقمي دائم يضمن ترشيح نشاطك التجاري بالاسم كأول وأفضل إجابة في ChatGPT وPerplexity وGoogle وخرائط جوجل لمضاعفة المبيعات دون استنزاف في الإعلانات.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "name": "VIP Diagnostic Audit & Consultation"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "38",
-        "bestRating": "5.0",
-        "worstRating": "1.0"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "@id": "https://seenlead.com/#review-angelo",
-          "itemReviewed": {
-            "@id": "https://seenlead.com/#service"
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "إدارة Shisha Lounge Angelo - أمستردام"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5.0",
-            "bestRating": "5.0"
-          },
-          "reviewBody": "بفضل منظومة المهندس سامر إلهامي، تصدرت منصتنا المركز الأول في إجابات وترشيحات الذكاء الاصطناعي في أمستردام بـ 15 لغة مختلفة. النتيجة كانت زيادة مباشرة في الحجوزات والمبيعات بنسبة +65% دون الحاجة لإنفاق دولار واحد في الإعلانات اليومية. التحول من موقع عادي إلى مرجع موثوق في الذكاء الاصطناعي كان أفضل قرار استثماري اتخذناه."
         }
       ]
     }

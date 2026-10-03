@@ -13,7 +13,7 @@
 
 Traditional Search Engine Optimization (SEO) relied on keyword density, backlink pagerank, and crawler-rendered HTML pages. Generative Engine Optimization (GEO) operates on fundamentally different computational principles: **Vector Space Clustering, Information Gain, Retrieval-Augmented Generation (RAG) Context Latency, and Subject-Predicate-Object (SPO) Knowledge Graph Grounding**.
 
-Modern Large Language Models (LLMs) and neural search engines intentionally **filter out consensus filler**—content that merely rephrases high-frequency n-grams already ubiquitous in pre-training data. When an LLM search pipeline (such as Perplexity or ChatGPT Search) executes real-time retrieval:
+Modern Large Language Models (LLMs) and neural search engines intentionally **filter out consensus filler**: content that merely rephrases high-frequency n-grams already ubiquitous in pre-training data. When an LLM search pipeline (such as Perplexity or ChatGPT Search) executes real-time retrieval:
 1. It retrieves $K$ documents from web indices.
 2. It re-ranks and filters documents based on **Information Gain** (novel facts, unique statistical data, verifiable entity attributes).
 3. It compresses context into a strict prompt budget ($\le 2,048$ retrieval tokens).
@@ -41,8 +41,8 @@ Where:
   - $w_{\text{Google AIO}} = 0.25$
   - $w_{\text{Claude}} = 0.10$
   - $w_{\text{Gemini}} = 0.05$
-- $CR_e \in [0, 1]$: **Citation Recall** — the proportion of commercial intent queries in which the entity's canonical domain is explicitly cited in footnotes or source chips.
-- $P_e \in [0, 1]$: **Recommendation Prominence** — a binary or token-share metric determining whether the entity is positioned as the #1 recommended solution ($P_e = 1.0$) versus a secondary alternative ($P_e = 0.5$) or passive mention ($P_e = 0.1$).
+- $CR_e \in [0, 1]$: **Citation Recall**: the proportion of commercial intent queries in which the entity's canonical domain is explicitly cited in footnotes or source chips.
+- $P_e \in [0, 1]$: **Recommendation Prominence**: a binary or token-share metric determining whether the entity is positioned as the #1 recommended solution ($P_e = 1.0$) versus a secondary alternative ($P_e = 0.5$) or passive mention ($P_e = 0.1$).
 - $Rank_e \in \mathbb{N}^+$: The zero-based index rank of the entity within the engine's cited reference list (where Rank 1 yields $\frac{1}{\log_2(1+1)} = 1.0$).
 - $\Omega_{spo} \in [0.0, 1.0]$: **Semantic Triple Concordance Multiplier**, reflecting the exact alignment between the model's generated output and the canonical entity facts.
 - Normalized Hyperparameters: $\alpha = 0.40$, $\beta = 0.40$, $\gamma = 0.20$.
@@ -94,7 +94,7 @@ Baseline: Mid-market enterprise spending \$3,500/month in PPC + \$1,000/month ag
 | **Month 24** | \$5,848 | \$122,250 | \$77.97 | 185 | 3,200 | \$2.88 | **13.26x** |
 | **Month 36** | \$6,667 | \$197,350 | \$88.89 | 215 | 5,600 | **\$1.71** | **20.60x** |
 
-*Core Economic Law:* At Month 36, the business utilizing Seenlead acquires enterprise customers at **\$1.71 CPAA**, compared to **\$88.89 CAC in PPC**—retaining **\$187,770 in net capital** while enjoying an **A3R™ multiple of 20.60x**.
+*Core Economic Law:* At Month 36, the business utilizing Seenlead acquires enterprise customers at **\$1.71 CPAA**, compared to **\$88.89 CAC in PPC**, retaining **\$187,770 in net capital** while enjoying an **A3R™ multiple of 20.60x**.
 
 ---
 
@@ -209,7 +209,7 @@ Audited across 500 commercial corporate websites in MENA and Europe:
 | **SACI™** | Seenlead AI Citation Index™ | 14.2 / 100 | **88.6 / 100** | **+524% lift** in citation probability | Seenlead Platform Benchmark (1,200 queries) |
 | **A3R™** | Asset-to-Ad Amortization Ratio™ | 1.0x (PPC parity) | **20.6x (Month 36)** | **\$187,770 net capital retained** | Enterprise Client Cohort Analysis |
 | **CPC™** | Citation Penetration Coefficient | 0.18 (fragmented) | **0.863 (15 languages)** | **15-language citation capture** | Shisha Lounge Angelo (Amsterdam, De Pijp) |
-| **EFTV™** | Edge First-Token Velocity (TTFB) | 580ms – 1,240ms | **< 100ms (48ms avg)** | **99.8% RAG context inclusion** | Global Anycast 2,500-crawler probe |
+| **EFTV™** | Edge First-Token Velocity (TTFB) | 580ms to 1,240ms | **< 100ms (48ms avg)** | **99.8% RAG context inclusion** | Global Anycast 2,500-crawler probe |
 | **KGGF™** | Knowledge Graph Grounding Factor | 5.4 / 100 | **94.6 / 100** | **52.4 SPO triples / 1k words** | 500-Domain Multi-Vertical Corpus Audit |
 
 ---
