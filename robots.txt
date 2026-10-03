@@ -60,4 +60,4 @@ Allow: /
 
 # Canonical Sitemap Declaration
 Sitemap: https://seenlead.com/sitemap.xml
-Host: https://seenlead.com
+Host: seenlead.com
