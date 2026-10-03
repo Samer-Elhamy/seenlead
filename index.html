@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seenlead — Dominate Local Presence, Google Maps & Generative AI Search (GEO)</title>
+  <title>Seenlead — Local Presence & Generative Engine Optimization (GEO)</title>
   
   <!-- SEO & Social Graph Meta Tags -->
   <meta name="description" content="Seenlead is the premier AI visibility command center engineered by Samer Elhamy. Audit, optimize, and dominate your presence across Google Maps, local search, and Generative Engine Optimization (GEO) in ChatGPT, Perplexity, and Gemini.">
@@ -11,7 +11,7 @@
   <meta name="author" content="Samer Elhamy">
   <link rel="canonical" href="https://seenlead.com/">
   
-  <!-- Open Graph / Facebook / LinkedIn -->
+  <!-- Open Graph / LinkedIn / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://seenlead.com/">
   <meta property="og:title" content="Seenlead — Turn Digital Visibility into Paying Customers">
@@ -42,6 +42,7 @@
           "@id": "https://samerelhamy.com/#person",
           "name": "Samer Elhamy",
           "jobTitle": "Chief AI Search Architect & Generative Engine Optimization (GEO) Authority",
+          "telephone": "+201289541850",
           "url": "https://samerelhamy.com",
           "sameAs": [
             "https://linkedin.com/in/samer-elhamy",
@@ -74,8 +75,8 @@
         },
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+201091599818",
-          "contactType": "Customer Support",
+          "telephone": "+201289541850",
+          "contactType": "Direct Founder & Engineering Consultation",
           "email": "samer@samerelhamy.com",
           "availableLanguage": ["English", "Arabic"]
         }
@@ -84,10 +85,10 @@
   }
   </script>
 
-  <!-- Fonts: Inter & Plus Jakarta Sans & Tajawal for Arabic -->
+  <!-- Typography: Inter Variable + JetBrains Mono + Tajawal for Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -97,20 +98,25 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            arabic: ['Tajawal', 'sans-serif']
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+            arabic: ['"Tajawal"', 'sans-serif']
           },
           colors: {
-            brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
+            canvas: '#08090a',
+            panel: '#0f1011',
+            surface: '#16181a',
+            surfaceElevated: '#1f2124',
+            accent: {
+              DEFAULT: '#5e6ad2',
+              hover: '#7170ff',
+              glow: 'rgba(94, 106, 210, 0.25)'
             },
-            accent: '#06b6d4',
-            dark: '#080c16'
+            emeraldAccent: {
+              DEFAULT: '#10b981',
+              hover: '#059669',
+              glow: 'rgba(16, 185, 129, 0.25)'
+            }
           }
         }
       }
@@ -118,210 +124,286 @@
   </script>
 
   <style>
+    :root {
+      color-scheme: dark;
+    }
     body {
-      background-color: #060911;
-      color: #f1f5f9;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
+      background-color: #08090a;
+      color: #f7f8f8;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-feature-settings: "cv01", "ss03";
+      -webkit-font-smoothing: antialiased;
     }
-    .hero-glow {
-      background: radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.22) 0%, rgba(6, 182, 212, 0.10) 35%, transparent 70%);
+    .linear-border {
+      border: 1px solid rgba(255, 255, 255, 0.07);
     }
-    .glass-card {
-      background: rgba(15, 23, 42, 0.70);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .linear-border:hover {
+      border-color: rgba(255, 255, 255, 0.16);
     }
-    .glass-card:hover {
-      border-color: rgba(99, 102, 241, 0.40);
+    .linear-border-accent {
+      border: 1px solid rgba(94, 106, 210, 0.35);
+    }
+    .linear-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .linear-card:hover {
+      background: rgba(255, 255, 255, 0.035);
+      border-color: rgba(255, 255, 255, 0.14);
       transform: translateY(-2px);
     }
-    .brand-gradient {
-      background: linear-gradient(135deg, #ffffff 20%, #cbd5e1 55%, #818cf8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .specular-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(94, 106, 210, 0.15) 0%, transparent 60%);
     }
-    .badge-glow {
-      box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.4);
+    .radial-noise {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+    .whatsapp-pulse {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+      animation: pulse-green 2.4s infinite;
+    }
+    @keyframes pulse-green {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+      }
+      70% {
+        box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
 
-  <!-- Background Decorative Grid -->
-  <div class="fixed inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <!-- Ambient Luxury Noise & Lighting -->
+  <div class="fixed inset-0 pointer-events-none radial-noise opacity-40"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[420px] pointer-events-none specular-glow"></div>
 
-  <!-- Header / Navigation -->
-  <header class="relative z-20 max-w-7xl mx-auto w-full px-6 py-6 flex items-center justify-between border-b border-white/[0.06]">
-    <div class="flex items-center space-x-3">
-      <!-- Logo Symbol -->
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-accent flex items-center justify-center shadow-lg shadow-brand-500/25">
-        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        </svg>
-      </div>
-      <div>
-        <span class="text-2xl font-extrabold tracking-tight text-white">Seenlead<span class="text-accent">.</span></span>
-        <span class="hidden md:inline-block ml-2 text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-brand-500/20 text-indigo-300 font-semibold border border-brand-500/30">By Samer Elhamy</span>
-      </div>
-    </div>
-
-    <!-- Direct Contact Actions (WhatsApp & Email) -->
-    <div class="flex items-center space-x-3">
-      <!-- WhatsApp Direct Button -->
-      <a href="https://wa.me/201091599818?text=Hello%20Samer!%20I'm%20interested%20in%20Seenlead%20and%20multiplying%20my%20business%20visibility%20and%20leads." target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.523 3.662 1.436 5.179L2 22l4.981-1.393A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-        </svg>
-        <span>WhatsApp: 01091599818</span>
+  <!-- Top Sticky Navigation (Linear Architecture) -->
+  <header class="sticky top-0 z-50 w-full border-b border-white/[0.05] bg-[#08090a]/85 backdrop-blur-xl">
+    <div class="max-w-[1240px] mx-auto px-6 h-[68px] flex items-center justify-between">
+      
+      <!-- Brand Logotype -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-lg bg-[#0f1011] border border-white/10 flex items-center justify-center text-white shadow-inner group-hover:border-accent/60 transition-colors">
+          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-[17px] font-semibold tracking-[-0.03em] text-[#f7f8f8]">Seenlead</span>
+          <span class="text-[11px] font-mono text-[#8a8f98] uppercase tracking-wider hidden sm:inline">GEO Engine</span>
+        </div>
       </a>
 
-      <!-- Direct Email Link -->
-      <a href="mailto:samer@samerelhamy.com?subject=Seenlead%20Inquiry" class="hidden sm:inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-all duration-200">
-        <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        <span>samer@samerelhamy.com</span>
-      </a>
+      <!-- Quick Nav Links & Direct WhatsApp CTA -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Email Link -->
+        <a href="mailto:samer@samerelhamy.com" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] text-[#8a8f98] hover:text-[#f7f8f8] hover:bg-white/[0.03] transition-colors">
+          <span>samer@samerelhamy.com</span>
+        </a>
+
+        <!-- Direct WhatsApp CTA Button (High Priority) -->
+        <a 
+          href="https://wa.me/201289541850?text=Hello%20Samer!%20I'm%20contacting%20you%20via%20Seenlead.com%20to%20audit%20and%20dominate%20my%20business%20visibility%20and%20leads." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[13px] font-medium hover:bg-emerald-500/20 whatsapp-pulse transition-all duration-200"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.523 3.662 1.436 5.179L2 22l4.981-1.393A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+          <span>Chat on WhatsApp: 01289541850</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
   <!-- Hero Section -->
-  <main class="relative z-10 hero-glow flex-grow flex flex-col items-center justify-center py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
+  <main class="relative z-10 flex-grow flex flex-col items-center justify-center pt-14 pb-20 px-6">
+    <div class="max-w-[880px] mx-auto text-center">
 
-      <!-- Authority Badge -->
-      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 mb-8 badge-glow">
-        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-300">Generative Engine Optimization (GEO) &bull; VIP Early Access</span>
+      <!-- Status Pill Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 hover:border-white/15 transition-colors">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="text-[12px] font-medium tracking-tight text-[#d0d6e0]">Autonomous Visibility &amp; Generative Engine Optimization</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight brand-gradient leading-[1.08] mb-6">
-        Turn Digital Visibility <br class="hidden sm:inline" />Into Paying Customers.
+      <!-- Hero Headline (Linear Aggressive Tight Kerning) -->
+      <h1 class="text-4xl sm:text-6xl md:text-[68px] font-semibold tracking-[-0.04em] leading-[1.05] text-[#f7f8f8] mb-6">
+        Turn Search Discoverability Into Inbound Buyer Leads.
       </h1>
 
       <!-- Subheadline -->
-      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
-        The all-in-one AI command center for business owners to check, optimize, and dominate search presence across 
-        <span class="text-white font-semibold">Google Maps</span>, <span class="text-white font-semibold">Local SEO</span>, and modern <span class="text-accent font-semibold">Generative AI engines (ChatGPT, Perplexity &amp; Gemini)</span>.
+      <p class="text-[17px] sm:text-[19px] text-[#8a8f98] max-w-2xl mx-auto leading-relaxed mb-6 font-normal">
+        The precision command center for business owners to check, optimize, and dominate search visibility across 
+        <span class="text-[#f7f8f8] font-medium">Google Maps</span>, <span class="text-[#f7f8f8] font-medium">Local Search</span>, and <span class="text-[#7170ff] font-medium">Generative AI engines (ChatGPT, Perplexity &amp; Gemini)</span>.
       </p>
 
-      <!-- Arabic Sub-Pitch -->
-      <p class="font-arabic text-base text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto" dir="rtl">
+      <!-- Egyptian Arabic Direct Value Statement -->
+      <p class="font-arabic text-[15px] text-[#d0d6e0] mb-10 leading-relaxed max-w-xl mx-auto" dir="rtl">
         منصتك الذكية للسيطرة على ظهور نشاطك التجاري في خرائط جوجل، ومحركات البحث، وترشيحات الذكاء الاصطناعي.. لتحويل كل عملية بحث محلي إلى زبائن واتصالات ومبيعات حقيقية.
       </p>
 
-      <!-- Email Waitlist Subscription Form -->
-      <div class="max-w-md mx-auto mb-16">
-        <form id="waitlist-form" class="flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-2xl bg-white/[0.05] border border-white/10 shadow-2xl backdrop-blur-md">
-          <input 
-            type="email" 
-            id="waitlist-email" 
-            placeholder="Enter your work email for VIP access..." 
-            required 
-            class="w-full px-5 py-3.5 rounded-xl bg-transparent text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500 transition-all"
-          >
-          <button 
-            type="submit" 
-            class="w-full sm:w-auto shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-accent text-white text-sm font-semibold hover:opacity-90 shadow-lg shadow-brand-500/30 transition-all duration-200"
-          >
-            Request Access
-          </button>
-        </form>
-        <p id="form-feedback" class="text-xs text-slate-400 mt-3"></p>
+      <!-- Primary Action Row -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto mb-14">
+        <!-- Direct WhatsApp Button -->
+        <a 
+          href="https://wa.me/201289541850?text=Hello%20Samer!%20I'm%20ready%20to%20audit%20my%20company's%20visibility%20with%20Seenlead." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-500 text-white font-medium text-[14px] hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 transition-all duration-200"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.523 3.662 1.436 5.179L2 22l4.981-1.393A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+          <span>Direct WhatsApp Consultation</span>
+        </a>
+
+        <!-- VIP Waitlist / Early Access Trigger -->
+        <a 
+          href="#interactive-audit" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3.5 rounded-lg bg-white/[0.04] text-[#f7f8f8] hover:bg-white/[0.08] border border-white/[0.08] font-medium text-[14px] transition-colors"
+        >
+          <span>Run Live Audit &darr;</span>
+        </a>
       </div>
 
-      <!-- Feature Grid: Built from Samer Elhamy's GEO Architecture -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
+      <!-- Live Interactive Audit Simulator (Linear Component Pattern) -->
+      <section id="interactive-audit" class="w-full max-w-[760px] mx-auto text-left mb-20">
+        <div class="linear-card rounded-xl p-6 sm:p-8">
+          <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+              <span class="text-[12px] font-mono text-[#8a8f98] ml-2">seenlead_geo_diagnostic_v1.0.sh</span>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">LIVE SCANNER</span>
+          </div>
+
+          <h3 class="text-lg font-semibold text-[#f7f8f8] tracking-tight mb-2">Check Your Local &amp; AI Visibility Score</h3>
+          <p class="text-[13px] text-[#8a8f98] mb-6 leading-relaxed">
+            Enter your brand and location to simulate how Google Maps algorithms and Perplexity/ChatGPT cite your business against local competitors.
+          </p>
+
+          <form id="audit-form" class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+            <input 
+              type="text" 
+              id="biz-name" 
+              placeholder="Business Name (e.g. Acme Dental)" 
+              required 
+              class="w-full px-3.5 py-2.5 rounded-md bg-[#0f1011] border border-white/10 text-[13px] text-[#f7f8f8] placeholder-[#62666d] focus:outline-none focus:border-accent transition-colors"
+            >
+            <input 
+              type="text" 
+              id="biz-city" 
+              placeholder="City (e.g. Cairo, Dubai, London)" 
+              required 
+              class="w-full px-3.5 py-2.5 rounded-md bg-[#0f1011] border border-white/10 text-[13px] text-[#f7f8f8] placeholder-[#62666d] focus:outline-none focus:border-accent transition-colors"
+            >
+            <button 
+              type="submit" 
+              class="w-full px-4 py-2.5 rounded-md bg-accent text-white font-medium text-[13px] hover:bg-accent-hover transition-colors shadow-sm"
+            >
+              Simulate Diagnostic
+            </button>
+          </form>
+
+          <!-- Diagnostic Results Output Box -->
+          <div id="audit-output" class="hidden font-mono text-[12px] p-4 rounded-md bg-[#0a0c0e] border border-white/[0.06] text-[#8a8f98] space-y-2">
+          </div>
+        </div>
+      </section>
+
+      <!-- Three Pillars (Linear Style Asymmetric Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left mb-20">
         
-        <!-- Card 1: Local & Maps Dominance -->
-        <div class="glass-card p-6 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Google Maps Local Pack</h3>
-          <p class="text-sm text-slate-400 leading-relaxed mb-3">
-            Rank in the top 3 of Google Local Pack where 70% of phone calls and physical store visits originate. Full NAP sync across 50+ directories.
+        <!-- Pillar 1 -->
+        <div class="linear-card p-6 rounded-xl">
+          <div class="text-[11px] font-mono text-[#8a8f98] mb-3">01 / LOCAL DOMINANCE</div>
+          <h3 class="text-base font-medium text-[#f7f8f8] mb-2 tracking-tight">Google Maps Local Pack</h3>
+          <p class="text-[13px] text-[#8a8f98] leading-relaxed">
+            Position your company in the top 3 of Google Maps local results where 70% of inbound phone calls and visits originate. Automated NAP sync across 50+ directories.
           </p>
-          <span class="text-xs font-semibold text-indigo-400">&bull; +65% to +380% Organic Foot-Traffic</span>
         </div>
 
-        <!-- Card 2: Generative Engine Optimization (GEO) -->
-        <div class="glass-card p-6 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Generative Engine Optimization</h3>
-          <p class="text-sm text-slate-400 leading-relaxed mb-3">
-            Entity Knowledge Graph injection (`@graph`) linking your business to Wikidata to capture up to 84% citation share in ChatGPT, Perplexity, and Gemini.
+        <!-- Pillar 2 -->
+        <div class="linear-card p-6 rounded-xl">
+          <div class="text-[11px] font-mono text-accent mb-3">02 / GENERATIVE SEARCH</div>
+          <h3 class="text-base font-medium text-[#f7f8f8] mb-2 tracking-tight">Generative Engine Optimization</h3>
+          <p class="text-[13px] text-[#8a8f98] leading-relaxed">
+            Entity Knowledge Graph injection linking your brand to Wikidata, securing up to 84% citation capture rates when buyers ask ChatGPT and Perplexity for top recommendations.
           </p>
-          <span class="text-xs font-semibold text-cyan-400">&bull; 84% Verified AI Citation Capture</span>
         </div>
 
-        <!-- Card 3: Real-Time Lead Conversion -->
-        <div class="glass-card p-6 rounded-2xl transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Automated Audit &amp; Leads</h3>
-          <p class="text-sm text-slate-400 leading-relaxed mb-3">
-            Real-time audit detects missing citations, competitor encroachments, and AI hallucinations to safeguard and compound your inbound customer flow.
+        <!-- Pillar 3 -->
+        <div class="linear-card p-6 rounded-xl">
+          <div class="text-[11px] font-mono text-emerald-400 mb-3">03 / INBOUND LEADS</div>
+          <h3 class="text-base font-medium text-[#f7f8f8] mb-2 tracking-tight">Automated Audit &amp; Alerts</h3>
+          <p class="text-[13px] text-[#8a8f98] leading-relaxed">
+            Instant alerts for missing local citations, negative review surges, and AI hallucinations to ensure your business remains the authoritative first choice.
           </p>
-          <span class="text-xs font-semibold text-emerald-400">&bull; Zero-Hydration Fast Architecture</span>
         </div>
 
       </div>
 
-      <!-- Founder & Architecture Callout -->
-      <div class="glass-card p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left border border-brand-500/20">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shrink-0 text-2xl font-bold shadow-lg shadow-brand-500/20">
-          SE
-        </div>
-        <div class="flex-grow">
-          <h4 class="text-base font-bold text-white mb-1">Engineered by Samer Elhamy</h4>
-          <p class="text-xs text-slate-400 mb-3 leading-relaxed">
-            Chief AI Search Architect &amp; Generative Engine Optimization (GEO) Authority in Egypt &amp; MENA. Creator of VoiceTut TTS &amp; High-Density Semantic Knowledge Graph systems.
-          </p>
-          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs">
-            <a href="https://wa.me/201091599818" target="_blank" class="text-emerald-400 hover:underline font-semibold flex items-center gap-1">
-              <span>WhatsApp: +20 109 159 9818</span> &rarr;
-            </a>
-            <span class="text-slate-600">&bull;</span>
-            <a href="mailto:samer@samerelhamy.com" class="text-indigo-400 hover:underline font-semibold">
-              samer@samerelhamy.com
-            </a>
-            <span class="text-slate-600">&bull;</span>
-            <a href="https://samerelhamy.com" target="_blank" class="text-slate-300 hover:underline">
-              Portfolio &rarr;
+      <!-- Chief Architect & Verified Track Record (From Samer's Portfolio) -->
+      <section class="linear-card p-8 rounded-xl max-w-3xl mx-auto text-left mb-16">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/[0.06] pb-6 mb-6">
+          <div>
+            <div class="text-[11px] font-mono text-accent uppercase tracking-wider mb-1">Architect &amp; Lead Systems Engineer</div>
+            <h4 class="text-xl font-semibold text-[#f7f8f8] tracking-tight">Samer Elhamy</h4>
+            <p class="text-[13px] text-[#8a8f98]">Chief AI Search Architect &amp; GEO Authority &bull; Aswan &amp; Cairo, Egypt</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a 
+              href="https://wa.me/201289541850" 
+              target="_blank" 
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 text-[12px] font-medium hover:bg-emerald-500/20"
+            >
+              <span>WhatsApp: 01289541850</span>
             </a>
           </div>
         </div>
-      </div>
+
+        <div class="space-y-3 text-[13px] text-[#8a8f98] leading-relaxed">
+          <p>
+            <span class="text-[#f7f8f8] font-medium">Verified Evidence:</span> Engineered the Shisha Lounge Angelo platform (Amsterdam), ranking #1 across the Netherlands in 15 languages on Perplexity and ChatGPT Search.
+          </p>
+          <p>
+            <span class="text-[#f7f8f8] font-medium">Architecture:</span> High-density connected knowledge graph engineering (<code class="text-accent font-mono">@graph</code>), zero-hydration server-rendered markup, and sub-100ms first-chunk response latency.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 text-[12px] font-mono">
+            <a href="https://samerelhamy.com" target="_blank" class="text-accent hover:underline">Portfolio: samerelhamy.com &rarr;</a>
+            <a href="https://linkedin.com/in/samer-elhamy" target="_blank" class="text-[#d0d6e0] hover:underline">LinkedIn &rarr;</a>
+            <a href="https://github.com/SamerElhamy" target="_blank" class="text-[#d0d6e0] hover:underline">GitHub &rarr;</a>
+          </div>
+        </div>
+      </section>
 
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="relative z-20 border-t border-white/[0.06] py-8 px-6 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+  <!-- Footer (Linear Aesthetic) -->
+  <footer class="border-t border-white/[0.06] py-8 px-6 text-[12px] text-[#8a8f98]">
+    <div class="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        &copy; <span id="year"></span> <strong>Seenlead</strong>. All rights reserved. &bull; <span class="text-slate-400 font-mono">seenlead.com</span>
+        &copy; <span id="year"></span> <strong>Seenlead</strong>. All rights reserved. &bull; <span class="font-mono text-[#d0d6e0]">seenlead.com</span>
       </div>
-      <div class="flex items-center space-x-6">
-        <a href="https://wa.me/201091599818" target="_blank" class="hover:text-emerald-400 transition-colors">Direct WhatsApp</a>
-        <a href="mailto:samer@samerelhamy.com" class="hover:text-slate-300 transition-colors">samer@samerelhamy.com</a>
-        <span class="text-slate-600">|</span>
-        <span class="text-slate-400">Aswan &amp; Cairo &bull; Global Operations</span>
+      <div class="flex items-center gap-6">
+        <a href="https://wa.me/201289541850" target="_blank" class="text-emerald-400 hover:text-emerald-300">WhatsApp Direct: +20 128 954 1850</a>
+        <a href="mailto:samer@samerelhamy.com" class="hover:text-[#f7f8f8]">samer@samerelhamy.com</a>
+        <span class="text-white/20">|</span>
+        <span>Dual Market: Global &amp; MENA</span>
       </div>
     </div>
   </footer>
@@ -329,18 +411,26 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Local Waitlist Handler (Saves to localStorage & shows confirmation)
-    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+    // Interactive Diagnostic Simulator
+    document.getElementById('audit-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = document.getElementById('waitlist-email').value;
-      const feedback = document.getElementById('form-feedback');
+      const name = document.getElementById('biz-name').value;
+      const city = document.getElementById('biz-city').value;
+      const out = document.getElementById('audit-output');
       
-      let list = JSON.parse(localStorage.getItem('seenlead_waitlist') || '[]');
-      list.push({ email: email, date: new Date().toISOString() });
-      localStorage.setItem('seenlead_waitlist', JSON.stringify(list));
-
-      feedback.innerHTML = '<span class="text-emerald-400 font-medium">✓ You are registered on the Seenlead VIP waitlist! We will reach out shortly.</span>';
-      document.getElementById('waitlist-email').value = '';
+      out.classList.remove('hidden');
+      out.innerHTML = `
+        <div class="text-yellow-400">[*] Initializing Seenlead GEO Crawler for: <strong>${name}</strong> (${city})...</div>
+        <div class="text-[#d0d6e0]">&gt; Querying Google Local Knowledge Graph... <span class="text-emerald-400">FOUND</span></div>
+        <div class="text-[#d0d6e0]">&gt; Probing Perplexity AI & ChatGPT Search citation vectors... <span class="text-accent">ANALYZING</span></div>
+        <div class="text-emerald-400 pt-2 font-bold">[✓] Preliminary Health Score: 42/100 (Unclaimed GEO Citations Detected)</div>
+        <div class="text-[#f7f8f8] pt-1">To unlock your full 100/100 Dominance Blueprint, chat directly with Chief Architect Samer Elhamy:</div>
+        <div class="pt-2">
+          <a href="https://wa.me/201289541850?text=Hello%20Samer!%20My%20diagnostic%20score%20for%20${encodeURIComponent(name)}%20in%20${encodeURIComponent(city)}%20was%2042/100.%20I%20want%20to%20fix%20my%20visibility%20and%20leads." target="_blank" class="inline-block px-3 py-1.5 rounded bg-emerald-500 text-white font-sans text-xs font-semibold hover:bg-emerald-400">
+            Open WhatsApp Consultation (01289541850) &rarr;
+          </a>
+        </div>
+      `;
     });
   </script>
 </body>
