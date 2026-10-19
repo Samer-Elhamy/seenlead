@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Seenlead">
+  <defs>
+    <linearGradient id="sl-beam" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="sl-core" x1="28" y1="20" x2="48" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <!-- Spotlight cone suggesting visibility -->
+  <path d="M12 52 L28 28 L44 28 L52 52 Z" fill="url(#sl-beam)" opacity="0.92"/>
+  <path d="M28 28 L36 14 L44 28 Z" fill="#3b82f6"/>
+  <!-- Focus / lead point -->
+  <circle cx="36" cy="22" r="7.5" fill="url(#sl-core)"/>
+  <circle cx="36" cy="22" r="3.2" fill="#ffffff"/>
+  <!-- Lead tick -->
+  <path d="M18 46h20" stroke="#dbeafe" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+</svg>
